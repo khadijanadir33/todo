@@ -1,0 +1,50 @@
+<html>
+    <head>
+      <style>
+    table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
+  td{
+      width: 200px;
+      height: 40px;
+      text-align: center;
+      background-color: rgb(233, 218, 199);
+  }
+  th {
+      background-color: burlywood;
+      color: brown;
+  }
+  a{
+      text-decoration: none;
+      color: white;
+  }
+      </style>
+    </head>
+    <body>
+        <h1>To do list :</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Task</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for(let i=0; i<result.length ;i++) { %>
+                    <tr>
+                        <td><%=result[i].id%></td>
+                        <td><%=result[i].champ1%></td>
+                        <td>
+                            <button style="background-color: rgb(84, 59, 228);width: 70px;border: none;height: 30px; cursor: pointer;"><a href ="/tasks/<%=result[i].id%>/edit">Edit</a></button>
+                            
+                            <button style="background-color: rgb(243, 72, 72); width: 70px; border: none;height: 30px;cursor: pointer;"><a href ="/tasks/<%=result[i].id%>/delete">Delete</a></button>
+                        </td>
+                        
+                    </tr>
+                    <% } %>
+            </tbody>
+        </table>
+    </body>
+</html>
